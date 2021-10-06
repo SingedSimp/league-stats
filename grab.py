@@ -1,21 +1,22 @@
 import requests
 import psutil
 from time import sleep
-response = requests.get("https://127.0.0.1:2999/liveclientdata/allgamedata", verify=False)
+#response = requests.get("https://127.0.0.1:2999/liveclientdata/allgamedata", verify=False)
 print("League of Legends.exe" in (i.name() for i in psutil.process_iter()))
 gameOpen = "League of Legends.exe" in (i.name() for i in psutil.process_iter())
-while open == False:
+while gameOpen == False:
     print("Waiting for league to start...")
     sleep(0.5)
+    gameOpen = "League of Legends.exe" in (i.name() for i in psutil.process_iter())
     
 count = 0
 while gameOpen:
     print(count)
-    #response = requests.get("https://127.0.0.1:2999/liveclientdata/allgamedata", verify=False)
+    response = requests.get("https://127.0.0.1:2999/liveclientdata/allgamedata", verify=False)
     print("Request made.")
     str(count)
-    with open("response" + str(count) + ".json", "w") as f:
-        print("Writing to response" + str(count) + ".json.")
+    with open("./output/response" + str(count) + ".json", "w") as f:
+        print(f"Writing to response{str(count)}.json.")
         f.write(response.text)
     gameOpen = "League of Legends.exe" in (i.name() for i in psutil.process_iter())
     count+= 1
