@@ -1,0 +1,26 @@
+{
+  "name": "league-stats",
+  "version": "1.0.0",
+  "description": "Get stats from a league of legends game",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SingedSimp/league-stats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SingedSimp/league-stats/issues"
+  },
+  "homepage": "https://github.com/SingedSimp/league-stats#readme",
+  "devDependencies": {
+    "electron": "^15.1.1"
+  },
+  "dependencies": {
+    "python-shell": "^3.0.0"
+  }
+}
