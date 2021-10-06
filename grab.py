@@ -1,11 +1,12 @@
 import requests
 import psutil
 from time import sleep
-#response = requests.get("https://127.0.0.1:2999/liveclientdata/allgamedata", verify=False)
-print("League of Legends.exe" in (i.name() for i in psutil.process_iter()))
+# response = requests.get("https://127.0.0.1:2999/liveclientdata/allgamedata", verify=False)
+print("Waiting for league to start...")
+# print("League of Legends.exe" in (i.name() for i in psutil.process_iter()))
 gameOpen = "League of Legends.exe" in (i.name() for i in psutil.process_iter())
+
 while gameOpen == False:
-    print("Waiting for league to start...")
     sleep(0.5)
     gameOpen = "League of Legends.exe" in (i.name() for i in psutil.process_iter())
     
