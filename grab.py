@@ -21,9 +21,13 @@ while gameOpen:
     else:
         print("Request made.")
         str(count)
-        with open("./output/response" + str(count) + ".json", "w") as f:
-            print(f"Writing to response{str(count)}.json.")
-            f.write(response.text)
+        if '"httpStatus": 404,' in response.text:
+                print('Failure.')
+        else:
+            with open("./output/response" + str(count) + ".json", "w") as f:
+                print(f"Writing to response{str(count)}.json.")
+                f.write(response.text)
+            
         gameOpen = "League of Legends.exe" in (i.name() for i in psutil.process_iter())
         count+= 1
         sleep(0.5)
